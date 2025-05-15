@@ -73,10 +73,6 @@ Several factors contribute to the non-deterministic behavior of `pickle`:
 
 ## 7. Conclusion
 
-The `pickle` module does not guarantee deterministic serialization across different environments and conditions. While it is suitable for short-term storage and inter-process communication within controlled environments, 
+The `pickle` module does not guarantee deterministic serialization across different environments and conditions. While it is suitable for short-term storage and inter-process communication within controlled environments.
 
-## 8. References
-
-- Python 3.12.7 Documentation: pickle — Python object serialization
-- Stack Overflow Discussion on Pickle Determinism
-- Death and Gravity: Deterministic Hashing of Python Data Objects
+The recursion test failed because it reached recursion limit, while the `pickle` module passed most of the test cases, counting the failures of malfunctioning of float class, which is caused by the precision problem of the programming language but not the module itself. The module have splendid stability, for it has almost no cases which lead to malfunction.
