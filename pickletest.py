@@ -1,5 +1,6 @@
-import pickle,platform,pytest,hashlib,random,string,csv
+import pickle,platform,hashlib,random,csv
 import time
+import pickle_module_function1
 
 default_test_cases = [
         42,  # Integer
@@ -33,8 +34,39 @@ def test_pickle_round_trip():
         filename = system + python_version.replace('.','0') + ".csv"
         with open(filename, 'w+', newline='', encoding='utf-8') as file:
             csv.writer(file).writerows(hashed_data)
-        
-    
+
+def test_pickle_float_values():
+    test_cases = [
+        3.10000000000000000000004,
+        3.100000000000000000000004,
+        3.1000000000000000000000004,
+        3.10000000000000000000000004
+    ]
+    test_cases_failed=[]
+    serialized = pickle.dumps(3.1)
+    hashed_serialized = hashlib.sha256(serialized).hexdigest()
+    for obj in test_cases:
+        serialized_case = pickle.dumps(obj)
+        hashed_case = hashlib.sha256(serialized_case).hexdigest()
+        if not hashed_case == hashed_serialized:
+            test_cases_failed.append(obj)
+            print(f"Failed for object: {obj}")
+    if len(test_cases_failed)==0:
+        print("All float tests passed")
+        zeros_determination()
+    else:
+        print("Float test failed, it can handle these numbers.")
+
+#below are the code to determine how many zeros would affect the outcome of the dump.
+def zeros_determination():
+    serialized = pickle.dumps(3.1)
+    test_case = 3.104
+    hashed_serialized = hashlib.sha256(serialized).hexdigest()
+    zeros = "0"
+    while hashed_serialized!=hashlib.sha256(pickle.dumps(test_case)).hexdigest():
+        zeros = zeros + "0"
+        test_case = float("3.1"+zeros+"4")
+    print(f"test passed with {len(zeros)} zeros, it can't handle more due to the precision problem of float class.")
 
 def test_pickle_big_values():
     test_cases = [
@@ -117,12 +149,28 @@ def test_pickle_based_on_time_difference():
     if test_cases_failed == False:
         print("Time based tests passed.")
 
+def test_function1():
+    print("helloworld")
+
+def test_function2():
+    print("helloworld")
+
+def test_pickle_function_values():
+    hash_function_1 = hashlib.sha256(pickle.dumps(test_function1)).hexdigest()
+    hash_function_2 = hashlib.sha256(pickle.dumps(test_function2)).hexdigest()
+    time.sleep(1)
+    hash_delayed_function_1 = hashlib.sha256(pickle.dumps(test_function1)).hexdigest()
+    hash_delayed_function_2 = hashlib.sha256(pickle.dumps(test_function2)).hexdigest()
+    if hash_function_1!=hash_function_2: print("Test failed with functions with different names and the same content")
+    if hash_function_1!=hash_delayed_function_1 or hash_function_2!=hash_delayed_function_2: print("Test failed with functions with different time")
+
+def test_pickle_function_different_class_same_name_same_content_different_package():
+    hash_function_1 = hashlib.sha256(pickle.dumps(test_function1)).hexdigest()
+    hash_function_2 = hashlib.sha256(pickle.dumps(pickle_module_function1.test_function1)).hexdigest()
+    if hash_function_1!=hash_function_2: print("Test failed with functions with same names and the same content")
+
 def main():
-    test_pickle_round_trip()
-    test_pickle_big_values()
-    test_case_different_type()
-    test_pickle_based_on_time_difference()
-    test_pickle_boundary_values()
+    test_pickle_function_different_class_same_name_same_content_different_package()
 
 if  __name__=="__main__":
     main()
