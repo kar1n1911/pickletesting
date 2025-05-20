@@ -116,7 +116,7 @@ def test_pickle_boundary_values():
     deserialized = pickle.loads(serialized)
     assert deserialized == large_list
 
-def test_pickle_recursive_structure():
+def test_pickle_recursive_structure(): # This function can't be used for recursive loop problems, but can be tested.
     # Test recursive data structures
     recursive_list = []
     recursive_list.append(recursive_list)
@@ -163,11 +163,12 @@ def test_pickle_function_values():
     hash_delayed_function_2 = hashlib.sha256(pickle.dumps(test_function2)).hexdigest()
     if hash_function_1!=hash_function_2: print("Test failed with functions with different names and the same content")
     if hash_function_1!=hash_delayed_function_1 or hash_function_2!=hash_delayed_function_2: print("Test failed with functions with different time")
+    # no output is the ideal output!
 
 def test_pickle_function_different_class_same_name_same_content_different_package():
     hash_function_1 = hashlib.sha256(pickle.dumps(test_function1)).hexdigest()
     hash_function_2 = hashlib.sha256(pickle.dumps(pickle_module_function1.test_function1)).hexdigest()
-    if hash_function_1!=hash_function_2: print("Test failed with functions with same names and the same content")
+    if hash_function_1!=hash_function_2: print("Test failed with functions with same names and the same content but different packages")
 
 def main():
     test_pickle_function_different_class_same_name_same_content_different_package()
