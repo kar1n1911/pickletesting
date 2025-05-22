@@ -2,8 +2,8 @@
 
 ## Team Members and Contributions
 
-- **Xiuyu Dong**: Lead Researcher & Developer – Designed test suite.
-- 
+- **Xiuyu Dong**: Lead Researcher – Designed test suite.
+- **Tianzhuo Wu**: Develeoper - White-box testing code implementation and documentation.
 
 ## 1. Introduction
 
@@ -11,7 +11,7 @@ The `pickle` module in Python is widely used for serializing and deserializing P
 
 According to it's own document, `pickle` module is not secure as it will execute arbitrary code during unpickling.
 
-Durting realworld conditions, the `pickle` module would be used (by its own words) pickling and unpickling. Which is a serializing and deserializing process which is similar to what would be known as `json`, what is the difference except for the safety concerns is that after serialization, `pickle` would generate the content that is not human-readable, while the `json` would generate what human can read. 
+Durting realworld conditions, the `pickle` module would be used (by its own words) pickling and unpickling. Which is a serializing and deserializing process which is similar to what would be known as `json`, what is the difference except for the safety concerns is that after serialization, `pickle` would generate the content that is not human-readable, while the `json` would generate what human can read.
 
 Using bandit do detect the vulnerability of the `pickle` , stats as follows.
 
@@ -20,8 +20,6 @@ Using bandit do detect the vulnerability of the `pickle` , stats as follows.
 ![Screenshot 2025-05-22 at 10.51.38 PM](./Screenshot 2025-05-22 at 10.51.38 PM.png)
 
 ![Screenshot 2025-05-22 at 10.51.32 PM](./Screenshot 2025-05-22 at 10.51.32 PM.png)
-
-
 
 ![Screenshot 2025-05-22 at 10.51.24 PM](./Screenshot 2025-05-22 at 10.51.24 PM.png)
 
