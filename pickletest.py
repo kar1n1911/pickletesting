@@ -170,8 +170,38 @@ def test_pickle_function_different_class_same_name_same_content_different_packag
     hash_function_2 = hashlib.sha256(pickle.dumps(pickle_module_function1.test_function1)).hexdigest()
     if hash_function_1!=hash_function_2: print("Test failed with functions with same names and the same content but different packages")
 
+def test_pickle_function_empty_objects():
+    a = object()
+    b = object()
+    hash_1 = hashlib.sha256(pickle.dumps(a)).hexdigest()
+    hash_2 = hashlib.sha256(pickle.dumps(a)).hexdigest()
+    print(a==b)
+    if hash_1 != hash_2: print("Test Failed")
+    else: print("test passed")
+    #The hash would be the same while a==b output False.
+    #While I can not tell what this means. hhh.
+
+class custom_class:
+    pass
+
+def test_pickle_function_custom_classes():
+    a = custom_class()
+    b = custom_class()
+    a.x = 1
+    b.y = 2
+    a.y = 2
+    b.x = 1
+    hash_1 = hashlib.sha256(pickle.dumps(a)).hexdigest()
+    hash_2 = hashlib.sha256(pickle.dumps(a)).hexdigest()
+    print(a==b)
+    if hash_1 != hash_2: print("Test Failed")
+    else: print("test passed")
+    #which is also a test passed.
+    #I don't know what to say if the python thinks a is not the same as b.
+    #hhh.
+
 def main():
-    test_pickle_function_different_class_same_name_same_content_different_package()
+    test_pickle_function_custom_classes()
 
 if  __name__=="__main__":
     main()

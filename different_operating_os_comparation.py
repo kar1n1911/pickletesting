@@ -1,6 +1,7 @@
 #this file is for you to compare according to OS difference and python difference.
 #until now no difference is raised on macos and windows, but you can test that also on linux.
-import pickle,platform,pytest,hashlib,random,string,csv
+#Test passed on centos on python 3.9.21
+import pickle,platform,hashlib,csv
 
 default_test_cases = [
         42,  # Integer
