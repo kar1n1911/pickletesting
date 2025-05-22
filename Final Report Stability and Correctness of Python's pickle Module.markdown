@@ -13,7 +13,19 @@ According to it's own document, `pickle` module is not secure as it will execute
 
 Durting realworld conditions, the `pickle` module would be used (by its own words) pickling and unpickling. Which is a serializing and deserializing process which is similar to what would be known as `json`, what is the difference except for the safety concerns is that after serialization, `pickle` would generate the content that is not human-readable, while the `json` would generate what human can read. 
 
+Using bandit do detect the vulnerability of the `pickle` , stats as follows.
 
+![TestResults](./Screenshot 2025-05-22 at 10.51.48 PM.png)
+
+![Screenshot 2025-05-22 at 10.51.38 PM](./Screenshot 2025-05-22 at 10.51.38 PM.png)
+
+![Screenshot 2025-05-22 at 10.51.32 PM](./Screenshot 2025-05-22 at 10.51.32 PM.png)
+
+
+
+![Screenshot 2025-05-22 at 10.51.24 PM](./Screenshot 2025-05-22 at 10.51.24 PM.png)
+
+![Screenshot 2025-05-22 at 10.51.16 PM](./Screenshot 2025-05-22 at 10.51.16 PM.png)
 
 ## 2. Test Suite Design
 
