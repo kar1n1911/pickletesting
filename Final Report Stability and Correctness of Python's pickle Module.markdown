@@ -4,6 +4,8 @@
 
 - **Xiuyu Dong**: Lead Researcher – Designed test suite.
 - **Tianzhuo Wu**: Develeoper - White-box testing code implementation and documentation.
+- **Chengyang Luo**:Documentation Assistant – Helped organize test results, formatted the final report, and contributed to writing the findings and conclusion sections.
+- **Renhao Qian**: Quality Assurance & Security Analyst – Conducted Bandit security analysis on the pickle module, interpreted the vulnerability reports, and contributed to the security discussion and risk assessment section.
 
 ## 1. Introduction
 
