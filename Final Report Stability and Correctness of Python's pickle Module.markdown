@@ -13,7 +13,7 @@ The `pickle` module in Python is widely used for serializing and deserializing P
 
 According to it's own document, `pickle` module is not secure as it will execute arbitrary code during unpickling.
 
-Durting realworld conditions, the `pickle` module would be used (by its own words) pickling and unpickling. Which is a serializing and deserializing process which is similar to what would be known as `json`, what is the difference except for the safety concerns is that after serialization, `pickle` would generate the content that is not human-readable, while the `json` would generate what human can read.
+During realworld conditions, the `pickle` module would be used (by its own words) pickling and unpickling. Which is a serializing and deserializing process which is similar to what would be known as `json`, what is the difference except for the safety concerns is that after serialization, `pickle` would generate the content that is not human-readable, while the `json` would generate what human can read.
 
 Using bandit do detect the vulnerability of the `pickle` , stats as follows.
 
