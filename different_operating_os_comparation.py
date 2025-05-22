@@ -62,7 +62,7 @@ def test_pickle_round_trip():
         with open(filename, 'w+', newline='', encoding='utf-8') as file:
             csv.writer(file).writerows([[h] for h in hashed_data])
         print("Compare the file if you want, system version and python version.\n")
-        print("For instance, input windows first and then input 3.12.3 .")
+        print("For instance, input windows first, press enter, then input 3.12.3 .")
         print("If you don't want to do that, input QUIT. All uppercase.")
         system_version = input()
         print(system_version)
