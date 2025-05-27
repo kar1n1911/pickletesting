@@ -2,7 +2,7 @@
 
 ## Team Members and Contributions
 
-- **Xiuyu Dong**: Lead Researcher – Designed test suite.
+- **Xiuyu Dong**: Lead Researcher – Designed test suite, coordinating black-box testing.
 - **Tianzhuo Wu**: Develeoper - White-box testing code implementation and documentation.
 - **Chengyang Luo**:Documentation Assistant – Helped organize test results, formatted the final report, and contributed to writing the findings and conclusion sections.
 - **Renhao Qian**: Quality Assurance & Security Analyst – Conducted Bandit security analysis on the pickle module, interpreted the vulnerability reports, and contributed to the security discussion and risk assessment section.
@@ -124,7 +124,26 @@ The `pickle` module does not guarantee deterministic serialization across differ
 ## 9. References
 
 - Python 3.12.7 Documentation: pickle — Python object serialization
+
 - Stack Overflow Discussion on Pickle Determinism
+
+- Used datasets:
+
+  ![Screenshot 2025-05-27 at 1.52.02 PM](./Screenshot 2025-05-27 at 1.52.02 PM.png)
+
+  ![Screenshot 2025-05-27 at 1.52.18 PM](./Screenshot 2025-05-27 at 1.52.18 PM.png)
+
+  ![Screenshot 2025-05-27 at 1.52.43 PM](./Screenshot 2025-05-27 at 1.52.43 PM.png)
+
+  etc.
+
+  with The test results screenshots below.
+
+  ![Screenshot 2025-05-27 at 2.11.46 PM](./Screenshot 2025-05-27 at 2.11.46 PM.png)
+
+  ![Screenshot 2025-05-27 at 2.15.03 PM](./Screenshot 2025-05-27 at 2.15.03 PM.png)
+
+  
 
 ## 10. Repository
 

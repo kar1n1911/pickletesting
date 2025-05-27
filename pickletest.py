@@ -7,6 +7,8 @@ import time
 
 import pickle_module_function1
 
+
+
 DEFAULT_TEST_CASES = [
     42,  # Integer
     3.14,  # Float
@@ -42,7 +44,7 @@ def test_pickle_round_trip():
         print(hashed_data)
         system = platform.system()
         python_version = platform.python_version()
-        filename = f"{system}{python_version.replace('.', '0')}.csv"
+        filename = f"{system}{python_version.replace('.', '')}.csv"
         with open(filename, 'w+', newline='', encoding='utf-8') as file:
             csv.writer(file).writerows([[h] for h in hashed_data])
 
@@ -230,7 +232,20 @@ def test_pickle_function_custom_classes():
     # which is also a test passed.
 
 
-def main():
+def main(): 
+# due to someone's total ignorance, absolute idealess and disability with both mind and hand, I have no choice but to dump all the functions above in here.
+# Now it become a total mountain of nobody want.
+# WhAT ARE THEY TALKING ABOUT SCREENSHOT EVERYTHING WHILE THEY WOULD NOT EVEN LOOK AT THE CODES!
+# SO WHAT'S THE POINT OF WRITING ALL THESE IF I JUST NEED TO SCREENSHOT A "TEST PASSED" ?!
+    test_pickle_round_trip()
+    test_pickle_float_values()
+    test_pickle_big_values()
+    test_case_different_type()
+    test_pickle_boundary_values()
+    test_pickle_based_on_time_difference()
+    test_pickle_function_values()
+    test_pickle_function_different_class_same_name_same_content_different_package()
+    test_pickle_function_empty_objects()
     test_pickle_function_custom_classes()
 
 
