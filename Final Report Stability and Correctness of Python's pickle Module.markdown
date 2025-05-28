@@ -135,15 +135,25 @@ The `pickle` module does not guarantee deterministic serialization across differ
 
   ![Screenshot 2025-05-27 at 1.52.43 PM](./Screenshot 2025-05-27 at 1.52.43 PM.png)
 
-  etc.
+  ![test_large_unique_objects](./whitebox_pic/test_large_unique_objects.png)
 
-  with The test results screenshots below.
+  ![test_memo_behavior](./whitebox_pic/test_memo_behavior.png)
 
-  ![Screenshot 2025-05-27 at 2.11.46 PM](./Screenshot 2025-05-27 at 2.11.46 PM.png)
+  ![test_nested_structure](./whitebox_pic/test_nested_structure.png)
 
-  ![Screenshot 2025-05-27 at 2.15.03 PM](./Screenshot 2025-05-27 at 2.15.03 PM.png)
+  ![test_pickle_function_lambda](./whitebox_pic/test_pickle_function_lambda.png)
 
+  ![test_recursive_structure](./whitebox_pic/test_recursive_structure.png)
   
+  etc.
+  
+  with The test results screenshots below.
+  
+  ![Screenshot 2025-05-27 at 2.11.46 PM](./Screenshot 2025-05-27 at 2.11.46 PM.png)
+  
+  ![Screenshot 2025-05-27 at 2.15.03 PM](./Screenshot 2025-05-27 at 2.15.03 PM.png)
+  
+  ![result](./whitebox_pic/result.png)
 
 ## 10. Repository
 
