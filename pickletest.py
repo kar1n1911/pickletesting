@@ -233,10 +233,6 @@ def test_pickle_function_custom_classes():
 
 
 def main(): 
-# due to someone's total ignorance, absolute idealess and disability with both mind and hand, I have no choice but to dump all the functions above in here.
-# Now it become a total mountain of nobody want.
-# WhAT ARE THEY TALKING ABOUT SCREENSHOT EVERYTHING WHILE THEY WOULD NOT EVEN LOOK AT THE CODES!
-# SO WHAT'S THE POINT OF WRITING ALL THESE IF I JUST NEED TO SCREENSHOT A "TEST PASSED" ?!
     test_pickle_round_trip()
     test_pickle_float_values()
     test_pickle_big_values()
